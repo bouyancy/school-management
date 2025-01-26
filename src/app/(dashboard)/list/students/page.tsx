@@ -72,9 +72,14 @@ const StudentListPage = () => {
       <td className="hidden lg:table-cell">{item.address}</td>
       <td>
         <div className="flex items-center gap-2">
+          <Link href={`/list/students/${item.id}`}>
+            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
+              <Image src="/view.png" alt="" width={26} height={26} className="rounded-full"/>
+            </button>
+          </Link>
           {role === "admin" &&
             <>
-            <FormModal table="student" type="update" data={item}/>
+            {/* <FormModal table="student" type="update" data={item}/> */}
             <FormModal table="student" type="delete" id={item.id}/>
             </>
           }
